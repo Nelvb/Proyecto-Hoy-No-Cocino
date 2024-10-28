@@ -1,81 +1,53 @@
-# WebApp boilerplate with React JS and Flask API
+# ¡Hoy No Cocino!
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+¡Hoy No Cocino! es una aplicación web para la gestión de reservas en restaurantes, facilitando tanto la reserva de mesas por parte de los usuarios como la administración de detalles por los propios restaurantes. Este proyecto fue desarrollado como parte del curso Full Stack Developer en 4Geeks Academy.
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+## Tecnologías Utilizadas
 
-### 1) Installation:
+### 🛠️ Stack
+- **Frontend**: React.js, JavaScript, HTML5, CSS3
+- **Backend**: Flask, Python
+- **Bases de Datos**: PostgreSQL, SQLAlchemy
+- **Autenticación y Seguridad**: JWT (JSON Web Tokens)
+- **Gestión de Imágenes**: Cloudinary
+- **Notificaciones y Correos Electrónicos**: Flask-Mail
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+## Funcionalidades Principales
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+- **Registro y Autenticación**: Permite a los usuarios registrarse y acceder de manera segura.
+- **Reservas**: Los usuarios pueden buscar restaurantes, ver disponibilidad, y realizar reservas online.
+- **Área Privada para Restaurantes**: Gestión de disponibilidad, detalles de mesas y configuración de horarios.
+- **Envío de Confirmaciones por Correo**: Los usuarios reciben confirmación de sus reservas directamente en su correo.
+- **Sistema de Favoritos**: Los usuarios pueden marcar restaurantes como favoritos.
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+## Instalación
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+1. **Backend**: Requiere Python 3.8+, Pipenv, y una base de datos PostgreSQL.
+    ```bash
+    $ pipenv install
+    $ cp .env.example .env
+    ```
+   Configura la base de datos en el archivo `.env` con la variable `DATABASE_URL` adecuada.
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+2. **Migración y Arranque de la Aplicación**
+    ```bash
+    $ pipenv run migrate
+    $ pipenv run upgrade
+    $ pipenv run start
+    ```
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+3. **Frontend**: Requiere Node.js (versión 14+).
+    ```bash
+    $ npm install
+    $ npm run start
+    ```
 
-### Undo a migration
+## Despliegue
 
-You are also able to undo a migration by running
+La aplicación está lista para desplegarse en servicios como Render o Heroku. Sigue la [documentación oficial](https://start.4geeksacademy.com/deploy).
 
-```sh
-$ pipenv run downgrade
-```
+## Contribuyentes
 
-### Backend Populate Table Users
+Este proyecto fue creado como parte del bootcamp en [4Geeks Academy](https://4geeksacademy.com).
 
-To insert test users in the database execute the following command:
-
-```sh
-$ flask insert-test-users 5
-```
-
-And you will see the following message:
-
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
-
-### **Important note for the database and the data inside it**
-
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
-
-### Front-End Manual Installation:
-
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
-
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
-
-## Publish your website!
-
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
-
-### Contributors
-
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+---
